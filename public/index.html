@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Сайт Алексея — он же DeM0RG, DeM0, Деморг или просто Дем." />
+  <title>DeM0RG — о себе</title>
+  <link rel="icon" href="assets/avatar-fallback.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="bento" aria-label="Портфолио">
+
+    <section class="window card--about" id="about">
+      <h2 class="bar card__label"><span>&gt; обо мне<span class="caret">_</span></span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
+      <div class="win-body about">
+        <img class="about__avatar" src="https://avatars.githubusercontent.com/dem0rg-official"
+             alt="Аватар Алексея" width="129" height="129"
+             onerror="this.src='assets/avatar-fallback.svg'" />
+        <div class="about__body">
+          <h1 class="about__name" id="greeting">Good morning!</h1>
+          <p class="about__names">Алексей · DeM0RG · DeM0 · Деморг · Дем</p>
+          <div class="about__text">
+            <p>Привет! Ты попал(а) на сайт Алексея — он же DeM0RG, DeM0, Деморг или просто Дем. Люблю вайбкодить и творить. Сейчас мне 15 лет, да.</p>
+            <p>Школу не очень люблю, но учиться всё равно надо, поэтому свободного времени у меня обычно мало. Разве что по выходным и на каникулах.</p>
+            <p>Люблю видеоигры, например CS2 и Minecraft. Раньше часто играл в Terraria, R.E.P.O., Among Us, Geometry Dash, Garry’s Mod и ULTRAKILL.</p>
+            <p>Также я анимешник, который любит романтику.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="window card--counter" id="counter">
+      <h2 class="bar card__label"><span>&gt; счётчик</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
+      <div class="win-body counter">
+        <div class="counter__digits" id="counter-digits" aria-live="polite">0000000</div>
+        <p class="counter-note">посещений отмечено</p>
+        <div class="counter__recent" id="counter-recent" hidden></div>
+        <form class="visit-form" id="counter-form" novalidate>
+          <input id="counter-nick" name="nickname" type="text" maxlength="32"
+                 placeholder="Ваш ник" autocomplete="off" required />
+          <div class="btn-row">
+            <button class="btn" type="submit" id="counter-submit">Отметиться</button>
+            <button class="btn btn--secondary" type="button" id="visit-history-button">История посещений</button>
+          </div>
+          <div id="counter-msg" class="counter__msg" role="status"></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="window card--contacts" id="contacts">
+      <h2 class="bar card__label"><span>&gt; контакты</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
+      <dl class="win-body data">
+        <div><dt>e-mail</dt><span class="leader"></span><dd><a href="mailto:alexzolotofficial@gmail.com">alexzolotofficial@gmail.com</a></dd></div>
+        <div><dt>telegram</dt><span class="leader"></span><dd><a href="https://t.me/dem0rg_official" target="_blank" rel="noopener">@dem0rg_official</a></dd></div>
+        <div><dt>discord</dt><span class="leader"></span><dd>@dem0rg</dd></div>
+        <div><dt>openvk</dt><span class="leader"></span><dd><a href="https://openvk.org/id47807" target="_blank" rel="noopener">id47807</a></dd></div>
+        <div><dt>steam</dt><span class="leader"></span><dd><a href="https://steamcommunity.com/profiles/76561199514950304/" target="_blank" rel="noopener">dem0rg</a></dd></div>
+      </dl>
+    </section>
+
+    <section class="window card--track" id="last-track">
+      <h2 class="bar card__label"><span>&gt; последний трек</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
+      <div class="win-body track" id="track-body">
+        <p class="card__status">загружаю…</p>
+      </div>
+    </section>
+
+    <section class="window card--friends" id="friends">
+      <h2 class="bar card__label"><span>&gt; друзья</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
+      <div class="win-body friends" id="friends-body">
+        <p class="card__status friends__stub">пока тут пусто — кнопки друзей появятся позже</p>
+      </div>
+    </section>
+
+    <section class="window card--projects" id="projects">
+      <h2 class="bar card__label"><span>&gt; проекты</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
+      <div class="win-body projects" id="projects-body">
+        <p class="card__status">загружаю проекты…</p>
+      </div>
+      <template id="projects-table">
+        <table class="proj-table">
+          <thead>
+            <tr><th style="width:92px">Дата</th><th style="width:180px">Проект</th><th>Описание</th><th style="width:96px">Статус</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </template>
+    </section>
+
+  </main>
+
+  <footer class="footer">made with love &amp; vibes · <a href="https://github.com/dem0rg-official">github</a></footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

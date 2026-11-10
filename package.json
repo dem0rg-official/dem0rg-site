@@ -1,0 +1,17 @@
+{
+  "name": "dem0rg-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Персональный сайт-портфолио Алексея (DeM0RG)",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}
