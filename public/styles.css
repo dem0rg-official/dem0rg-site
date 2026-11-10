@@ -70,16 +70,13 @@ a:hover { color: var(--fg); text-decoration: underline; }
   display: grid;
   gap: 5px;
   grid-template-columns: 1fr 2fr 1.1fr 1.08fr;
-  grid-template-rows: auto minmax(280px, 1fr);
+  grid-template-rows: auto minmax(300px, 1fr);
   grid-template-areas:
     "about about   track    friends"
     "count contact projects projects";
 }
 
-/* about тянется на оба ряда: заканчивается ниже линии раздела,
-   трек/друзья и проекты стартуют выше середины */
-.card--about    { grid-area: 1 / 1 / 3 / 3; }
-
+.card--about    { grid-area: about; }
 .card--track    { grid-area: track; }
 .card--friends  { grid-area: friends; }
 .card--projects { grid-area: projects; }

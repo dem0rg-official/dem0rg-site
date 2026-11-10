@@ -120,8 +120,16 @@ export function initCounter() {
   api
     .visits()
     .then(render)
-    .catch(() => {
-      renderDigits(0);
+    .catch((err) => {
+      if (err?.staticMode) {
+        // Статический хостинг (GitHub Pages): счётчику нужна БД на сервере
+        digitsEl.textContent = "0000000";
+        document.querySelector(".counter-note").textContent =
+          "счётчик работает на серверной версии сайта";
+        formEl.hidden = true;
+        return;
+      }
+      digitsEl.textContent = "0000000";
       setMessage("Не удалось загрузить счётчик. Проверь, что сервер запущен.", "err");
     });
 
@@ -144,7 +152,11 @@ export function initCounter() {
       setMessage(data.message || "Готово, посещение засчитано!", "ok");
       nickEl.value = "";
     } catch (err) {
-      setMessage(err.message, "err");
+      if (err?.staticMode) {
+        setMessage("Счётчик работает только на серверной версии сайта.", "err");
+      } else {
+        setMessage(err.message, "err");
+      }
     } finally {
       submitEl.disabled = false;
     }
