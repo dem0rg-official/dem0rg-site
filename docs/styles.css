@@ -261,6 +261,23 @@ a:hover { color: var(--fg); text-decoration: underline; }
 .counter__msg--ok { color: var(--fg-light); }
 .counter__msg--err { color: var(--muted); }
 
+/* ---------- Visitor: neofetch-подобная панель ---------- */
+
+.visitor { display: flex; flex-direction: column; gap: 8px; font-size: 13px; }
+
+.visitor__prompt { color: var(--fg-dark); font-size: 12px; }
+.visitor__prompt span { color: var(--fg-light); }
+
+.visitor__list { margin: 0; }
+
+.visitor__list > div { display: flex; gap: 12px; padding: 2px 0; }
+
+.visitor__list dt { flex: none; min-width: 64px; color: var(--muted); }
+.visitor__list dt::after { content: ":"; color: var(--line); }
+
+.visitor__list dd { margin: 0; color: var(--fg-light); overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+.visitor__list em { color: var(--fg-dark); font-style: normal; font-size: 11px; }
+
 /* ---------- История посещений (окно поверх страницы) ---------- */
 
 .history-overlay {

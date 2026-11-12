@@ -33,7 +33,18 @@
       </div>
     </section>
 
-    <section class="window card--counter" id="counter">
+    <section class="window card--counter" id="visitor">
+      <h2 class="bar card__label"><span>&gt; visitor<span class="caret">_</span></span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
+      <div class="win-body visitor">
+        <div class="visitor__prompt">guest@dem0rg:~$ <span>whoami</span></div>
+        <dl class="visitor__list" id="visitor-list"></dl>
+        <div class="visitor__prompt">guest@dem0rg:~$ <span class="caret">_</span></div>
+      </div>
+    </section>
+
+    <!-- Серверный счётчик посещений: скрыт, т.к. на GitHub Pages нет бэкенда.
+         Чтобы вернуть — уберите атрибут hidden и удалите окно #visitor. -->
+    <section class="window card--counter" id="counter" hidden>
       <h2 class="bar card__label"><span>&gt; counter</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
       <div class="win-body counter">
         <div class="counter__digits" id="counter-digits" aria-live="polite">0000000</div>
@@ -121,5 +132,6 @@
   <script src="js/snapshot.js"></script>
   <script src="js/app.js"></script>
   <script src="js/button.js"></script>
+  <script src="js/visitor.js"></script>
 </body>
 </html>
