@@ -15,7 +15,7 @@
   <main class="bento" aria-label="Портфолио">
 
     <section class="window card--about" id="about">
-      <h2 class="bar card__label"><span>&gt; обо мне<span class="caret">_</span></span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
+      <h2 class="bar card__label"><span>&gt; about me<span class="caret">_</span></span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
       <div class="win-body about">
         <img class="about__avatar" src="https://avatars.githubusercontent.com/dem0rg-official"
              alt="Аватар Алексея" width="129" height="129"
@@ -34,7 +34,7 @@
     </section>
 
     <section class="window card--counter" id="counter">
-      <h2 class="bar card__label"><span>&gt; счётчик</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
+      <h2 class="bar card__label"><span>&gt; counter</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
       <div class="win-body counter">
         <div class="counter__digits" id="counter-digits" aria-live="polite">0000000</div>
         <p class="counter-note">посещений отмечено</p>
@@ -52,7 +52,7 @@
     </section>
 
     <section class="window card--contacts" id="contacts">
-      <h2 class="bar card__label"><span>&gt; контакты</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
+      <h2 class="bar card__label"><span>&gt; contacts</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
       <dl class="win-body data">
         <div><dt>e-mail</dt><span class="leader"></span><dd><a href="mailto:alexzolotofficial@gmail.com">alexzolotofficial@gmail.com</a></dd></div>
         <div><dt>telegram</dt><span class="leader"></span><dd><a href="https://t.me/dem0rg_official" target="_blank" rel="noopener">@dem0rg_official</a></dd></div>
@@ -63,23 +63,24 @@
     </section>
 
     <section class="window card--track" id="last-track">
-      <h2 class="bar card__label"><span>&gt; последний трек</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
+      <h2 class="bar card__label"><span>&gt; last track</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
       <div class="win-body track" id="track-body">
         <p class="card__status">загружаю…</p>
       </div>
     </section>
 
     <section class="window card--friends" id="friends">
-      <h2 class="bar card__label"><span>&gt; друзья</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
+      <h2 class="bar card__label"><span>&gt; friends</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
       <div class="win-body friends" id="friends-body">
         <div class="friends-grid">
           <a href="http://nikanikoo.com/" target="_blank" rel="noopener noreferrer"><img src="http://files.nikanikoo.com/button.gif" alt="nikanikoo" width="88" height="31"></a>
         </div>
+        <button class="get-button" type="button" id="btn88-open">+ взять мою кнопку 88×31</button>
       </div>
     </section>
 
     <section class="window card--projects" id="projects">
-      <h2 class="bar card__label"><span>&gt; проекты</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
+      <h2 class="bar card__label"><span>&gt; projects</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></h2>
       <div class="win-body projects" id="projects-body">
         <p class="card__status">загружаю проекты…</p>
       </div>
@@ -95,8 +96,32 @@
 
   </main>
 
-  <footer class="footer">made with love &amp; vibes · <a href="https://github.com/dem0rg-official">github</a></footer>
+  <div class="history-overlay" id="btn88-overlay" hidden>
+    <div class="history-dialog btn88-dialog" role="dialog" aria-modal="true" aria-labelledby="btn88-title">
+      <h2 class="bar" id="btn88-title"><span>&gt; my button</span><button class="history-close" type="button" id="btn88-close" aria-label="Закрыть">×</button></h2>
+      <div class="btn88-body">
+        <div class="btn88-preview">
+          <img src="assets/dem0rg-button.gif" alt="DeM0RG" width="88" height="31">
+          <span>Кнопка 88×31 — размести её на своём сайте.</span>
+        </div>
+        <ol class="btn88-steps">
+          <li>Нажми «Скопировать код».</li>
+          <li>Вставь его в HTML своей страницы туда, где у тебя кнопки друзей.</li>
+          <li>Готово: кнопка загружается с моего сайта и ведёт на него.</li>
+        </ol>
+        <textarea class="btn88-code" id="btn88-code" readonly spellcheck="false" aria-label="HTML-код кнопки">&lt;a href="https://dem0rg-official.github.io/dem0rg-site/" target="_blank" rel="noopener noreferrer"&gt;&lt;img src="https://dem0rg-official.github.io/dem0rg-site/assets/dem0rg-button.gif" alt="DeM0RG" width="88" height="31"&gt;&lt;/a&gt;</textarea>
+        <div class="btn88-actions">
+          <button class="btn" type="button" id="btn88-copy">Скопировать код</button>
+          <a class="btn btn--secondary" href="assets/dem0rg-button.gif" download="dem0rg-button.gif">Скачать .gif</a>
+          <span class="btn88-ok" id="btn88-ok" role="status"></span>
+        </div>
+        <p>Хочешь хранить файл у себя — скачай .gif и замени в коде адрес картинки на свой.</p>
+      </div>
+    </div>
+  </div>
 
-  <script type="module" src="js/main.js"></script>
+  <script src="js/snapshot.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/button.js"></script>
 </body>
 </html>

@@ -26,7 +26,7 @@ function mapStream(item) {
     image: album?.image || null,
     album: album?.name || null,
     playedAt: item.playedAt || item.endTime || null,
-    url: t.url || t.spotifyUrl || null,
+    url: t.url || t.spotifyUrl || (t.externalIds?.spotify?.[0] ? `https://open.spotify.com/track/${t.externalIds.spotify[0]}` : null),
   };
 }
 
