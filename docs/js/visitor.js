@@ -32,16 +32,32 @@
     return "unknown";
   }
 
-  // сколько раз этот браузер открывал сайт (хранится только у гостя)
+  // Визиты этого браузера (хранятся только у гостя).
+  // Визит засчитывается не чаще одного раза в сутки на браузер, а не при каждой
+  // загрузке страницы или клике, поэтому накрутить счётчик обновлением нельзя.
+  // Раз в месяц счётчик обнуляется.
   var visits = 1, first = null;
   try {
-    visits = (parseInt(localStorage.getItem("site:visits"), 10) || 0) + 1;
-    localStorage.setItem("site:visits", String(visits));
-    first = localStorage.getItem("site:first");
-    if (!first) {
-      first = new Date().toISOString();
-      localStorage.setItem("site:first", first);
+    var now = new Date();
+    var pad = function (n) { return n < 10 ? "0" + n : String(n); };
+    var month = now.getFullYear() + "-" + pad(now.getMonth() + 1);
+    var day = month + "-" + pad(now.getDate());
+
+    if (localStorage.getItem("site:month") !== month) {
+      // новый месяц (или первый заход): сброс
+      localStorage.setItem("site:month", month);
+      localStorage.setItem("site:visits", "0");
+      localStorage.setItem("site:first", now.toISOString());
+      localStorage.removeItem("site:lastday");
     }
+
+    visits = parseInt(localStorage.getItem("site:visits"), 10) || 0;
+    if (localStorage.getItem("site:lastday") !== day) {
+      visits += 1;
+      localStorage.setItem("site:visits", String(visits));
+      localStorage.setItem("site:lastday", day);
+    }
+    first = localStorage.getItem("site:first");
   } catch (e) { /* хранилище недоступно */ }
 
   var tz = "";
